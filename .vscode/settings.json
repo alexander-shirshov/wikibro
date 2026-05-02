@@ -1,0 +1,23 @@
+{
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "[css]": {
+    "editor.stickyScroll.enabled": true // Закрепляет селекторы
+  },
+  "[json]": {
+    "editor.stickyScroll.enabled": true // Закрепляет структуру объекта
+  },
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false, // опционально, чтобы по умолчанию были свёрнуты
+  "explorer.fileNesting.patterns": {
+    // Основное правило: всё, что заканчивается на .test.ts(x), прячем под основной файл
+    "*.ts": "${capture}.test.ts, ${capture}.test.tsx, ${capture}.spec.ts, ${capture}.spec.tsx",
+    "*.tsx": "${capture}.test.ts, ${capture}.test.tsx, ${capture}.spec.ts, ${capture}.spec.tsx"
+
+    // Если хочешь ещё и другие файлы прятать (styles, stories и т.д.)
+    // "*.ts": "${capture}.test.ts, ${capture}.test.tsx, ${capture}.spec.ts, ${capture}.spec.tsx, ${capture}.styles.ts, ${capture}.styles.tsx, ${capture}.stories.ts, ${capture}.stories.tsx",
+    // "*.tsx": "${capture}.test.ts, ${capture}.test.tsx, ${capture}.spec.ts, ${capture}.spec.tsx, ${capture}.styles.ts, ${capture}.styles.tsx, ${capture}.stories.ts, ${capture}.stories.tsx"
+  }
+}
