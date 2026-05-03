@@ -9,6 +9,8 @@
     "editor.stickyScroll.enabled": true // Закрепляет структуру объекта
   },
 
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false, // опционально, чтобы по умолчанию были свёрнуты
   "explorer.fileNesting.patterns": {
