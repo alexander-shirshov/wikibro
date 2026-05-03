@@ -22,4 +22,7 @@ export interface Messages {
       description: string;
     };
   };
+  theme: {
+    button: string;
+  };
 }

@@ -16,6 +16,9 @@ const en: Messages = {
       description: 'Frontend skeleton is ready.',
     },
   },
+  theme: {
+    button: 'Theme',
+  },
 };
 
 export default en;

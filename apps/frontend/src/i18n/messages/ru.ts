@@ -16,6 +16,9 @@ const ru: Messages = {
       description: 'Frontend skeleton готов.',
     },
   },
+  theme: {
+    button: 'Тема',
+  },
 };
 
 export default ru;

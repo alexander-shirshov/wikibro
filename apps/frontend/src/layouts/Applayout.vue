@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useTypedI18n } from '@/i18n/useTypedI18n';
+import { useThemeStore } from '@/stores/theme.store';
 
+const themeStore = useThemeStore();
 const { t, locale, switchLanguage } = useTypedI18n();
 </script>
 
@@ -19,6 +21,7 @@ const { t, locale, switchLanguage } = useTypedI18n();
         <button type="button" :aria-label="t('app.language.switchLabel')" @click="switchLanguage">
           {{ locale.toUpperCase() }}
         </button>
+        <button type="button" @click="themeStore.toggleTheme">{{ t('theme.button') }}</button>
       </nav>
     </header>
 
