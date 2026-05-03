@@ -3,7 +3,7 @@ import { config } from "./config/env.js";
 import { closeDb } from "./db/knex.js";
 
 async function start() {
-  const app = buildApp();
+  const app = await buildApp();
 
   async function shutdown(signal: string) {
     app.log.info({ signal }, "Shutting down server");

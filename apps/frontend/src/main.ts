@@ -6,4 +6,4 @@ import { pinia } from '@/app/pinia';
 import App from './App.vue';
 import { router } from '@/app/router';
 
-createApp(App).use(router).use(pinia).use(i18n).mount('#app');
+createApp(App).use(pinia).use(i18n).use(router).mount('#app');

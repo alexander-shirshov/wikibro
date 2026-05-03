@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Applayout from '@/layouts/Applayout.vue';
+import AppLayout from '@/layouts/AppLayout.vue';
 </script>
 
 <template>
-  <Applayout />
+  <AppLayout />
 </template>

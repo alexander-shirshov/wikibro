@@ -33,5 +33,18 @@ services:
       postgres:
         condition: service_healthy
 
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/frontend/Dockerfile
+    container_name: wikibro-frontend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${FRONTEND_PORT}:5173"
+    depends_on:
+      - backend
+
 volumes:
   wikibro_postgres_data:
