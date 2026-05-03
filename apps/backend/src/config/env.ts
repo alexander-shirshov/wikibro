@@ -8,17 +8,10 @@ const __dirname = path.dirname(__filename);
 
 const envPath = path.resolve(__dirname, "../../../../.env");
 
-if (!fs.existsSync(envPath)) {
-  console.error(`❌ .env file not found at: ${envPath}`);
-  console.log(`📁 Current __dirname: ${__dirname}`);
-  process.exit(1);
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath });
+  console.log(`✅ Loading .env from: ${envPath}`);
 }
-
-console.log(`✅ Loading .env from: ${envPath}`);
-
-dotenv.config({
-  path: envPath,
-});
 
 function required(value: string | undefined, name: string): string {
   if (!value) {
@@ -29,8 +22,18 @@ function required(value: string | undefined, name: string): string {
 
 export const config = {
   NODE_ENV: process.env.NODE_ENV ?? "development",
-  PORT: Number(process.env.PORT) || 3000,
-  HOST: process.env.HOST ?? "0.0.0.0",
+
+  BACKEND_PORT: Number(process.env.PORT) || 3000,
+  BACKEND_HOST: process.env.HOST ?? "0.0.0.0",
+
+  POSTGRES_DB: required(process.env.POSTGRES_DB, "POSTGRES_DB"),
+  POSTGRES_USER: required(process.env.POSTGRES_USER, "POSTGRES_USER"),
+  POSTGRES_PASSWORD: required(
+    process.env.POSTGRES_PASSWORD,
+    "POSTGRES_PASSWORD",
+  ),
+  POSTGRES_HOST: process.env.POSTGRES_HOST ?? "localhost",
+  POSTGRES_PORT: Number(process.env.POSTGRES_PORT) || 5432,
 
   DATABASE_URL: required(process.env.DATABASE_URL, "DATABASE_URL"),
   SESSION_SECRET: required(process.env.SESSION_SECRET, "SESSION_SECRET"),
