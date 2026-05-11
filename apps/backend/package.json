@@ -13,6 +13,7 @@
     "db:rollback": "tsx ./node_modules/knex/bin/cli.js migrate:rollback --knexfile knexfile.ts",
     "db:status": "tsx ./node_modules/knex/bin/cli.js migrate:status --knexfile knexfile.ts",
     "db:seed": "tsx ./node_modules/knex/bin/cli.js seed:run --knexfile knexfile.ts",
+    "db:seed:make": "tsx ./node_modules/knex/bin/cli.js seed:make --knexfile knexfile.ts",
     "db:make": "tsx ./node_modules/knex/bin/cli.js migrate:make --knexfile knexfile.ts"
   },
   "keywords": [],
