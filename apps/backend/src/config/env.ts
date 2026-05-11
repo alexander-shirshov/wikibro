@@ -36,6 +36,7 @@ export const config = {
   POSTGRES_PORT: Number(process.env.POSTGRES_PORT) || 5432,
 
   DATABASE_URL: required(process.env.DATABASE_URL, "DATABASE_URL"),
+  DATABASE_URL_LOCAL: process.env.DATABASE_URL_LOCAL,
   SESSION_SECRET: required(process.env.SESSION_SECRET, "SESSION_SECRET"),
   APP_URL: required(process.env.APP_URL, "APP_URL"),
   UPLOADS_DIR: process.env.UPLOADS_DIR ?? "./uploads",

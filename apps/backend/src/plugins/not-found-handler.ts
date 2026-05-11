@@ -1,5 +1,3 @@
-// apps/backend/src/plugins/not-found-handler.ts
-
 import type { FastifyReply, FastifyRequest } from "fastify";
 import type { ApiErrorResponse } from "../types/api-response.js";
 
